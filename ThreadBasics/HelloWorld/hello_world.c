@@ -33,28 +33,21 @@ static void* thread_fn_callback(void*arg){
 		sleep(1);
 	}
 }
-void thread_create(){
 
+
+int main (int argc, char**argv){
 	pthread_t thread1;
 	static char *threadinput1 = "hello im samrat " ;
 	int rc = pthread_create (&thread1, NULL, thread_fn_callback, (void*)threadinput1);
 	if(rc!=0){
 		printf("error\n");
 	}
-
-}
-
-
-
-
-int main (int argc, char**argv){
-	thread_create();
 	// now pause 
 	printf("main thread is paused \n ");
 	while(1){
 		printf("main thread is runing... \n");
 		sleep(1);
-	}
+	}	
 	pause(); 
   return 0 ;
 
