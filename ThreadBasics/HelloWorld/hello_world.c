@@ -28,10 +28,15 @@
 
 static void* thread_fn_callback(void*arg){
 	char* input=(char*)arg;
-	while(1){
+	int a =0;
+
+	while(a<10){
 		printf( " the input string is : %s\n",input);
 		sleep(1);
+		a++;
+		if(a==5) pthread_exit(0);
 	}
+
 }
 
 
@@ -44,9 +49,13 @@ int main (int argc, char**argv){
 	}
 	// now pause 
 	printf("main thread is paused \n ");
-	while(1){
+	int t=1;
+	while(t++){
 		printf("main thread is runing... \n");
 		sleep(1);
+		if(t==5) pthread_exit(0);
+
+
 	}	
 	pause(); 
   return 0 ;
