@@ -53,7 +53,7 @@ int main (int argc, char**argv){
 	while(t++){
 		printf("main thread is runing... \n");
 		sleep(1);
-		if(t==5) pthread_exit(0);
+		if(t==3) pthread_exit(0);
 
 
 	}	
